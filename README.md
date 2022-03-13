@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# 開啟專案步驟
+## Step.1
+### 將當前路徑使用 cd 指令至該專案資料夾。
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
+## Step.2
+### `npm install`
+從 package.json install 該專案需要用到的套件。
 ### `npm start`
+使用該指令開始運行該專案。
+<br><br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 專案架構
+該專案進入點為 index.js ，進入點會直接與 Router.js 連接，並且在 Router.js 內使用 react-router-dom 這個套件實現網頁與網頁間的切換。
+<br><br>
+執行 npm start 指令會直接因為 package.json 內的 homepage 參數，將預設頁面設置為 SearchPage。
+<br><br>
+而 SearchPage 內的搜尋按鈕，會將使用者輸入的 username 使用 Link 標籤將 username 與切換至 ReposList 的網址(/search_repository_react/users/:username/repos)串接。
+<br><br>
+並且在 ReposList 使用 useParams 這個 Hook 取得使用者在 SearchPage 輸入的 username 去串接 GitHub API。<br>
+當網頁切換至 ReposList 時，會使用 useEffect 先去取得一次 API 的回傳值，在此時若是回傳值為 error 則會提醒使用者重新輸入 username，反之則去取得第一次的 API 回傳值，並將回傳值加入 repos 這個變數中，當 repos 改變時會有另一個 useEffect 去判斷網頁是否至底，若網頁至底的話，則再去取得一次 API 回傳值，重複上述順序直至沒有任何新的 Repository 可以加載，而顯示 Repository 的方式則是使用 map 去遍歷 repos 進而達到顯示的目的。
+<br><br>
+若是在 ReposList 按下任何一個 Repository 則會使用 useParams 這個 Hook 取得使用者是按下哪個 Repository 並將按下的 Repository name 與在 SearchPage 輸入的 username 去串接 GitHub API。<br>
+跟 ReposList 一樣，當網頁切換至 ReposDetail 時會取得一次 API 的回傳值，並顯示在頁面上，同時將剛剛的 username 以及 Repository name 與網址串接並且在按鈕上設定一個可以連接到 Repository 的超連結。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![alt 属性文本](./src/assets/homework.png)
 
-### `npm test`
+# 本專案使用套件
+* SearchPage
+  - useState (react)
+  - Link (react-router-dom)
+  - FontAwesomeIcon (@fortawesome/react-fontawesome)
+  - faMagnifyingGlass (@fortawesome/free-solid-svg-icons)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* ReposList
+  - useState, useEffect (react)
+  - useParams, Link (react-router-dom)
+  - axios (axios)
+  - FontAwesomeIcon (@fortawesome/react-fontawesome)
+  - faBook, faStar (@fortawesome/free-solid-svg-icons)
+  
+* ReposDetail
+  - useState, useEffect (react)
+  - useParams, Link (react-router-dom)
+  - axios (axios)
+  - FontAwesomeIcon (@fortawesome/react-fontawesome)
+  - faBook, faStar (@fortawesome/free-solid-svg-icons)
 
-### `npm run build`
+* Router
+  - BrowserRouter, Routes, Route (react-router-dom)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
