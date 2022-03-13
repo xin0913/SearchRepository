@@ -40,7 +40,7 @@ export const ReposDetail = () => {
           <h5 className="detailStarCount"><FontAwesomeIcon icon={ faStar } /> Repository Star：{details.stargazers_count}</h5>
           <div>
             <button className="detailButton"><a href = {'https://github.com/'+params.username+'/'+params.repo}><FontAwesomeIcon icon={ faGithub } /> GitHub</a></button>
-            <button className="detailButton"><Link to={'/search_repository_react'}>Search page</Link></button>
+            <button className="detailButton"><Link to={'/search_repository_react'}>Search Page</Link></button>
           </div>
         </div>
       </div>
