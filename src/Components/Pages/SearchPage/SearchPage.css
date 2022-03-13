@@ -1,0 +1,78 @@
+.mainDiv{
+    width: 100%;
+    height: 100%;
+    /* border:2px solid gray;
+    margin:1%;
+    background-color:rgb(230, 230, 230); */
+
+}
+
+.searchDiv{
+    /* border: 5px solid lightblue; */
+    background-color:rgb(230, 230, 230);
+    /* padding:15px; */
+}
+
+.searchForm{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    /* margin: 15px; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin:auto;
+    background-color: rgb(0, 50, 78);
+}
+
+.searchInput{
+    width: 30%;
+    height: 40px;
+    border: 2px solid gray;
+    border-radius: 6px;
+    font-size: 18px;
+    padding-left: 10px;
+    background-color:white;
+    color: black;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.searchButton{
+    height: 100%;
+    width: 10%;
+    border-radius: 5px;
+    border: 2px solid gray;
+    background-color: #5B5B5B;
+    font-size: 18px;
+    color: white;
+    box-sizing: content-box;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.searchButton a{
+    display: block;
+    font-size: 1.2rem;
+    padding: 5px;
+    box-sizing: border-box;
+    text-decoration: none;  /* 移除超連結底線 */
+    color: white; /* 移除超連結顏色 */
+    font-family: Comic Sans MS, Comic Sans, cursive;
+
+
+}
+
+.searchButton:hover{
+    background-color: gray;
+}
+
+.searchImgDiv{
+    width: 100%;
+}
+
+#searchImg{
+    width: 70%;
+    height: 90%;
+    display: block;
+    margin: 3% auto;
+}

@@ -1,0 +1,54 @@
+.mainDiv{
+    width: 100%;
+    height: 100%;
+    /* border:2px solid gray;
+    margin:1%;
+    background-color:rgb(230, 230, 230); */
+}
+
+.detailDiv{
+    margin:0 auto;
+    width:70%;
+    height: 100%;
+}
+
+.detailInfo{
+    background-color:white;
+    text-align: center;
+    padding:15px;
+    height:100%;
+    margin:1% auto;
+    border-radius: 5px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.detailFullName, .detailDescription, .detailStarCount{
+    padding:5px;
+    font-size: 18px;
+}
+
+.detailButton{
+    width: 20%;
+    border-radius: 5px;
+    border: 2px solid gray;
+    background-color: #5B5B5B;
+    font-size: 18px;
+    color: white;
+    box-sizing: content-box;
+    margin-left: 10px;
+    cursor: pointer;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.detailButton a{
+    display: block;
+    font-size: 1.2rem;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;  /* 移除超連結底線 */
+    color: white; /* 移除超連結顏色 */
+}
+
+.detailButton:hover{
+    background-color: gray;
+}
