@@ -22,13 +22,13 @@ export const SearchPage = () => {
                 <form className="searchForm" onSubmit={handleSubmit}>
                     <input type="text" className="searchInput" value={username} placeholder="GitHub Username" onChange={e=>setUsername(e.target.value)} />
                     <button type="button" className="searchButton" >
-                        <Link to={'/search_repository_react/users/'+username+'/repos'}>
+                        <Link to={'/SearchRrepositoryReact/users/'+username+'/repos'}>
                             <FontAwesomeIcon icon={ faMagnifyingGlass } />
                         </Link>
                     </button>
                 </form>
             </div>
-            <div className='searchImgDiv'><a href='https://boards.greenhouse.io/dcard/jobs/3874615?gh_src=9d4dfc871us'><img id='searchImg' src="https://img.onl/KRuzE6" /></a></div>
+            <div className='searchImgDiv'><a href='https://boards.greenhouse.io/dcard/jobs/3874615?gh_src=9d4dfc871us' target="blank"><img id='searchImg' src="https://img.onl/KRuzE6" /></a></div>
         </div>
     )
 }

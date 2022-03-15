@@ -42,7 +42,7 @@ export const ReposList = () => {
 
             // 將從repos接收來的值，也就是當前獲取的 Repository 顯示出來，並且取用。
             <div className="reposList" key={repo.id}>
-                <Link to = {'/search_repository_react/users/'+params.username+'/repos/'+repo.name}>
+                <Link to = {'/SearchRrepositoryReact/users/'+params.username+'/repos/'+repo.name}>
                     <div className="row">
                         <h2 className='repo-name'><FontAwesomeIcon icon={ faBook } /> {repo.name}</h2>
                         <div><FontAwesomeIcon icon={ faStar } /> {repo.stargazers_count}</div>
@@ -79,7 +79,7 @@ export const ReposList = () => {
             <div className="mainReposListDiv">
                 <div className="reposListDiv">
                     {repos.map(renderRepo)} {/* 使用map將遍歷array(repos)當中每個元素，將元素傳入指定的函數(renderRepo)後，接收回傳值。 */}
-                    <h1 className='returnToSearchPage'><Link to={'/search_repository_react'}>Return to search page</Link></h1>
+                    <h1 className='returnToSearchPage'><Link to={'/SearchRrepositoryReact'}>Return to search page</Link></h1>
                 </div>
             </div>
         </div>

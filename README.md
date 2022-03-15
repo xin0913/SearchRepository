@@ -50,4 +50,4 @@
   - BrowserRouter, Routes, Route (react-router-dom)
 
 # Deploy 至線上環境網址
-https://xin0913.github.io/search_repository_react/
+https://xin0913.github.io/SearchRrepositoryReact/
