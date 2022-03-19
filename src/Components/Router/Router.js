@@ -10,6 +10,7 @@ export const Router = () => {
   <BrowserRouter>
     <Routes>
       <Route path="/SearchRrepositoryReact" element={<SearchPage />} />
+      <Route path="/SearchRrepositoryReact/users//repos" element={<ReposList />} />
       <Route path="/SearchRrepositoryReact/users/:username/repos" element={<ReposList />} />
       <Route path="/SearchRrepositoryReact/users/:username/repos/:repo" element={<ReposDetail />} />
     </Routes>

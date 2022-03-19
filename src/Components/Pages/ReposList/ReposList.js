@@ -22,15 +22,22 @@ export const ReposList = () => {
     //----------------------------------------------------------------
     // 10 筆 Repository 的 API 請求。
     const searchRepos = async() => {
-        axios({
-          method: 'GET', url: `https://api.github.com/users/${params.username}/repos?per_page=10&page=${page}`,
-        }).then(res => {
-            // console.log(res.status)
-            setPage(page+1) // 每獲取完一次 API 就將下次要獲取的頁數 +1 ，好讓下次執行 API 不會重複獲取一樣的資料。
-            setRepos(repos.concat(res.data)) // 將api的回傳值 (用戶的 repository list)，設定給 repos。 這邊使用 concat() ，將舊的陣列與新的陣列合併。
-        }).catch((error) => {
-            alert(error.response.status+'：查無此用戶，請返回搜尋頁面並輸入正確用戶帳號。')
-        })
+        if(params.username != null){
+            axios({
+                method: 'GET', url: `https://api.github.com/users/${params.username}/repos?per_page=10&page=${page}`,
+            }).then(res => {
+                if(res.data.length === 0 && page === 1){
+                    alert('此用戶沒有任何 Repository。')
+                }
+                setPage(page+1) // 每獲取完一次 API 就將下次要獲取的頁數 +1 ，好讓下次執行 API 不會重複獲取一樣的資料。
+                setRepos(repos.concat(res.data)) // 將api的回傳值 (用戶的 repository list)，設定給 repos。 這邊使用 concat() ，將舊的陣列與新的陣列合併。
+            }).catch((error) => {
+                alert(error.response.status+'：查無此用戶，請返回搜尋頁面並輸入正確用戶帳號。')
+            })
+        }
+        else{
+            alert('使用者名稱為空，請輸入用戶使用者名稱在進行查詢。')
+        }
     }
 
     //----------------------------------------------------------------
@@ -39,7 +46,6 @@ export const ReposList = () => {
         return (
             /* React 會希望開發者在使用 map 函式渲染時加一個 key 上去，因為 key 必須是獨一無二的，所以這邊使用repos回傳的id (加上 key 的目的是為了效能優化)。
             舉例：假設今天有一個array:[a,b,c] index:[1,2,3]，若是今天陣列內的 b 被刪除或是等等原因造成陣列變動 => array:[a,c] index:[1,2]，由此可見，不能使用 index 作為 key。*/
-
             // 將從repos接收來的值，也就是當前獲取的 Repository 顯示出來，並且取用。
             <div className="reposList" key={repo.id}>
                 <Link to = {'/SearchRrepositoryReact/users/'+params.username+'/repos/'+repo.name}>
@@ -79,7 +85,9 @@ export const ReposList = () => {
             <div className="mainReposListDiv">
                 <div className="reposListDiv">
                     {repos.map(renderRepo)} {/* 使用map將遍歷array(repos)當中每個元素，將元素傳入指定的函數(renderRepo)後，接收回傳值。 */}
-                    <h1 className='returnToSearchPage'><Link to={'/SearchRrepositoryReact'}>Return to search page</Link></h1>
+                    <Link to={'/SearchRrepositoryReact'}>
+                        <h1 className='returnToSearchPage'>Return to search page</h1>
+                    </Link>
                 </div>
             </div>
         </div>
