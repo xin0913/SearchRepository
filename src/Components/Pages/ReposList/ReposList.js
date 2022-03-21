@@ -84,10 +84,14 @@ export const ReposList = () => {
             <Header username={params.username}/>
             <div className="mainReposListDiv">
                 <div className="reposListDiv">
+                    <div className="reposListLinkDiv">
+                        <Link to={'/SearchRrepositoryReact'}>
+                            <div className="row">
+                                <h1 className='returnToSearchPage'>Return to search page</h1>
+                            </div>
+                        </Link>
+                    </div>
                     {repos.map(renderRepo)} {/* 使用map將遍歷array(repos)當中每個元素，將元素傳入指定的函數(renderRepo)後，接收回傳值。 */}
-                    <Link to={'/SearchRrepositoryReact'}>
-                        <h1 className='returnToSearchPage'>Return to search page</h1>
-                    </Link>
                 </div>
             </div>
         </div>

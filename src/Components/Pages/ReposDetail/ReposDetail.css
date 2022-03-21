@@ -27,6 +27,10 @@
     font-size: 18px;
 }
 
+.detailButtonDiv{
+    margin: 1%;
+}
+
 .detailButton{
     width: 20%;
     border-radius: 5px;
@@ -35,7 +39,7 @@
     font-size: 18px;
     color: white;
     box-sizing: content-box;
-    margin-left: 10px;
+    margin: 1%;
     cursor: pointer;
     font-family: Comic Sans MS, Comic Sans, cursive;
 }
@@ -51,4 +55,26 @@
 
 .detailButton:hover{
     background-color: gray;
+}
+
+.ConnectToGitHubButton{
+    width:44%;
+    border-radius: 5px;
+    border: 2px solid gray;
+    background-color: #5B5B5B;
+    font-size: 18px;
+    color: white;
+    box-sizing: content-box;
+    margin: 1%;
+    cursor: pointer;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.ConnectToGitHubButton a{
+    display: block;
+    font-size: 1.2rem;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;  /* 移除超連結底線 */
+    color: white; /* 移除超連結顏色 */
 }

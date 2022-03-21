@@ -32,6 +32,15 @@
     text-decoration: none;  /* 移除超連結底線 */
     color: black; /* 移除超連結顏色 */  
 }
+
+.reposListLinkDiv{
+    /* border: 5px solid blue; */
+    background-color:white;
+    text-align: center;
+    padding:15px 15px 0px 15px;
+    border-radius: 5px;
+}
+
 .row{
     padding:10px;
     border-bottom: 1px solid rgb(233, 233, 233);
@@ -49,7 +58,6 @@
 }
 
 .returnToSearchPage{
-    padding:10px;
     text-align:center;
 }
 
