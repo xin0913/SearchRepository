@@ -33,12 +33,12 @@ export const ReposList = () => {
                 setPage(page+1) // 每獲取完一次 API 就將下次要獲取的頁數 +1 ，好讓下次執行 API 不會重複獲取一樣的資料。
                 setRepos(repos.concat(res.data)) // 將api的回傳值 (用戶的 repository list)，設定給 repos。 這邊使用 concat() ，將舊的陣列與新的陣列合併。
             }).catch((error) => {
-                alert(error.response.status+'：查無此用戶，請返回搜尋頁面並輸入正確用戶帳號。')
+                alert(error.response.status+'：查無此用戶，請輸入正確用戶帳號。\n即將返回 SearchPage。')
                 navigate("/SearchRrepositoryReact/")
             })
         }
         else{
-            alert('使用者名稱為空，請輸入用戶使用者名稱再進行查詢。')
+            alert('使用者名稱為空，請輸入用戶使用者名稱再進行查詢。\n即將返回 SearchPage。')
             navigate("/SearchRrepositoryReact/")
         }
     }
