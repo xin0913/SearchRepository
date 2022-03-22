@@ -47,7 +47,7 @@
   - useParams, Link (react-router-dom)
   - axios (axios)
   - FontAwesomeIcon (@fortawesome/react-fontawesome)
-  - faBook, faStar (@fortawesome/free-solid-svg-icons)
+  - faBook, faStar, faRotateLeft (@fortawesome/free-solid-svg-icons)
   
 * ReposDetail
   - useState, useEffect (react)

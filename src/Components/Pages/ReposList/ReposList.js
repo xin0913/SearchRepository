@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faBook, faStar, faRotateLeft } from '@fortawesome/free-solid-svg-icons'
 
 import Header from '../../Header/Header'
 
@@ -87,7 +87,7 @@ export const ReposList = () => {
                     <div className="reposListLinkDiv">
                         <Link to={'/SearchRrepositoryReact'}>
                             <div className="row">
-                                <h1 className='returnToSearchPage'>Return to search page</h1>
+                                <h1 className='returnToSearchPage'><FontAwesomeIcon icon={ faRotateLeft } /> Return to search page</h1>
                             </div>
                         </Link>
                     </div>
