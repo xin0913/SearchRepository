@@ -10,7 +10,7 @@ import Header from '../../Header/Header'
 import './ReposDetail.css'
 
 export const ReposDetail = () => {
-  
+
   const [details, setDetails] = useState({})
   const params = useParams()
 
@@ -25,7 +25,7 @@ export const ReposDetail = () => {
     axios({
       method: 'GET',url: `https://api.github.com/repos/${params.username}/${params.repo}`,
     }).then(res =>{
-      console.log(res.data)
+      // console.log(res.data)
       setDetails(res.data)      // 將api的回傳值(用戶的repository details)，設定給details。
     });
   }
