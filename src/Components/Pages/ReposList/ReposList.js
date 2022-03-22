@@ -50,7 +50,7 @@ export const ReposList = () => {
             <div className="reposList" key={repo.id}>
                 <Link to = {'/SearchRrepositoryReact/users/'+params.username+'/repos/'+repo.name}>
                     <div className="row">
-                        <h2 className='repo-name'><FontAwesomeIcon icon={ faBook } /> {repo.name}</h2>
+                        <div><h2 className='repo-name'><FontAwesomeIcon icon={ faBook } /> {repo.name}</h2></div>
                         <div><FontAwesomeIcon icon={ faStar } /> {repo.stargazers_count}</div>
                     </div>
                 </Link>
