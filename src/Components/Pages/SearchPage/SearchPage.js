@@ -12,7 +12,7 @@ export const SearchPage = () => {
     const navigate = useNavigate();
 
     const handleSubmit = () => {
-        navigate("/SearchRrepositoryReact/users/"+username+"/repos");
+        navigate("/SearchRrepositoryReact/users/"+username+"/repos")
     }
 
     return (

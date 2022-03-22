@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook, faStar, faRotateLeft } from '@fortawesome/free-solid-svg-icons'
@@ -14,6 +14,7 @@ export const ReposList = () => {
     const [page, setPage] = useState(1)     // 為了讓 API 能夠換頁設置的變數
     // const [error, setError] = useState('')
     const params = useParams()
+    const navigate = useNavigate();
 
     useEffect(() => {
         searchRepos()   // 讓專案在一開始就先打一次 API 獲取前 10 筆資料，也就是 10 個 Repository。
@@ -33,10 +34,12 @@ export const ReposList = () => {
                 setRepos(repos.concat(res.data)) // 將api的回傳值 (用戶的 repository list)，設定給 repos。 這邊使用 concat() ，將舊的陣列與新的陣列合併。
             }).catch((error) => {
                 alert(error.response.status+'：查無此用戶，請返回搜尋頁面並輸入正確用戶帳號。')
+                navigate("/SearchRrepositoryReact/")
             })
         }
         else{
             alert('使用者名稱為空，請輸入用戶使用者名稱再進行查詢。')
+            navigate("/SearchRrepositoryReact/")
         }
     }
 

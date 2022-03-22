@@ -44,7 +44,7 @@
 
 * ReposList
   - useState, useEffect (react)
-  - useParams, Link (react-router-dom)
+  - useParams, Link, useNavigate (react-router-dom)
   - axios (axios)
   - FontAwesomeIcon (@fortawesome/react-fontawesome)
   - faBook, faStar, faRotateLeft (@fortawesome/free-solid-svg-icons)
