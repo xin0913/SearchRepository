@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/SearchRrepositoryReact/static/css/main.cb73331f.css",
-    "main.js": "/SearchRrepositoryReact/static/js/main.d97e0bc1.js",
+    "main.js": "/SearchRrepositoryReact/static/js/main.ff8c58b0.js",
     "index.html": "/SearchRrepositoryReact/index.html",
     "main.cb73331f.css.map": "/SearchRrepositoryReact/static/css/main.cb73331f.css.map",
-    "main.d97e0bc1.js.map": "/SearchRrepositoryReact/static/js/main.d97e0bc1.js.map"
+    "main.ff8c58b0.js.map": "/SearchRrepositoryReact/static/js/main.ff8c58b0.js.map"
   },
   "entrypoints": [
     "static/css/main.cb73331f.css",
-    "static/js/main.d97e0bc1.js"
+    "static/js/main.ff8c58b0.js"
   ]
 }
